@@ -57,3 +57,17 @@ exports.login = (req, res) => {
     }
   });
 }
+
+//login
+exports.getUser = (req, res) => {
+  const { id } = req.params;
+  
+  User.findById({_id: id}).then((profile) => {
+    if(profile){
+      return res.status(200).json(profile)
+    }
+    else{
+      return res.status(400).json('error')
+    }
+  })
+}

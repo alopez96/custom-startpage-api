@@ -11,4 +11,9 @@ router.post('/login', (req, res) => {
 	controller.login(req, res);
 });
 
+//get user info with id
+router.get('/getUser/:id', (req, res) => {
+	controller.getUser(req, res);
+})
+
 module.exports = router;

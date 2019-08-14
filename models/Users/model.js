@@ -19,6 +19,10 @@ const User = new Schema({
   },
   joined: {
     type: Date
+  },
+  setup:{
+    type: Boolean,
+    default: false
   }
 });
 
