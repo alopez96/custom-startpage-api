@@ -71,3 +71,18 @@ exports.getUser = (req, res) => {
     }
   })
 }
+
+//update settings
+exports.updateSettings = (req, res) => {
+  const { id } = req.params;
+  const { background, links } = req.body;
+  User.findOneAndUpdate({ _id: id }, { $set: { 'background' : background, 'links': links } })
+  .then((user) => {
+    if (!user) {
+      return res.status(404).json({ 'Error': 'error' });
+    } else {
+      return res.status(201).json({ 'update': true });
+    }
+  })
+  .catch((err) => console.log(err))
+};

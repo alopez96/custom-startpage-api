@@ -20,10 +20,14 @@ const User = new Schema({
   joined: {
     type: Date
   },
-  setup:{
-    type: Boolean,
-    default: false
-  }
+  background:{
+    type: String,
+    required: false
+  },
+  links: [{
+    type: String,
+    required: false
+  }],
 });
 
 module.exports = mongoose.model('users', User);

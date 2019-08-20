@@ -16,4 +16,9 @@ router.get('/getUser/:id', (req, res) => {
 	controller.getUser(req, res);
 })
 
+//update settings
+router.put('/update/:id', (req, res) => {
+	controller.updateSettings(req, res);
+})
+
 module.exports = router;
